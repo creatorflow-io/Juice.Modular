@@ -6,7 +6,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 namespace Juice.Modular
 {
-	internal interface IModuleStartup
+	public interface IModuleStartup
 	{
 		/// <summary>
 		/// The order in which the module will be call Create
