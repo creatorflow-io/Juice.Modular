@@ -1,9 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
         <TargetFrameworks>$(AppTargetFramework)</TargetFrameworks>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
+        <IsPackable>false</IsPackable>
     </PropertyGroup>
 
     <ItemGroup>
