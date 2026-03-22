@@ -1,0 +1,21 @@
+name: Pack alpha packages
+
+on:
+  push:
+    branches:
+      - 'release/*'
+    paths-ignore:
+      - '*.md'
+  workflow_dispatch:
+
+jobs:
+  build:
+    uses: creatorflow-io/shared-workflows/.github/workflows/shared-pack.yml@net8
+    with:
+       Stage: alpha
+       Target: |
+          6.0.x
+          8.0.x
+          9.0.x
+          10.0.x
+    secrets: inherit

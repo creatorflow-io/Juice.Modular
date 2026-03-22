@@ -1,0 +1,30 @@
+﻿using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
+
+namespace Microsoft.Extensions.DependencyInjection
+{
+    public static class DiscoveredModulesServiceCollectionExtension
+    {
+        /// <summary>
+		/// Use this method to quick register MVC services with default options then register discovered modules.
+		/// </summary>
+		/// <param name="services"></param>
+        /// <param name="env"></param>
+		/// <param name="configuration"></param>
+		/// <returns></returns>
+		/// <exception cref="Exception"></exception>
+		public static IMvcBuilder AddDiscoveredModules(this IServiceCollection services, IWebHostEnvironment env, IConfigurationRoot configuration)
+        {
+            services.AddHttpContextAccessor();
+
+            var mvc = services.AddControllers(options =>
+            {
+            })
+            .AddDataAnnotationsLocalization()
+            .AddDiscoveredModules(env, configuration)
+            ;
+
+            return mvc;
+        }
+    }
+}
